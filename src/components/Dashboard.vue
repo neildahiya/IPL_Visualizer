@@ -27,6 +27,7 @@
       <div class="row occupy-vertical">
         <div class="col-sm-3 menu p-0">
           <img src="../assets/logo.png" class="img-fluid" id="logo" />
+
           <p
             class="menu-item h2"
             v-for="item in tabs"
@@ -122,6 +123,7 @@ export default {
   cursor: pointer;
   padding-top: 5px;
 }
+
 /* Chart Area */
 .contentArea {
   background-color: aliceblue;
