@@ -1,17 +1,41 @@
 <template>
-  <div class=" wrapper">
-    <div class="container-fluid mainBox">
-      <div class="row">
-        <div class="col-sm-3 menu">
-          <img src="../assets/logo.png" id="logo" />
-          <h2
-            class="menu-item glow"
+  <div class="wrapper">
+    <div class="container-fluid p-0 mainBox">
+      <b-navbar
+        class="mobile-nav"
+        toggleable="lg"
+        type="dark"
+        variant="primary"
+      >
+        <b-navbar-brand href="/"
+          ><img id="logo" src="../assets/logo.png" />IPL</b-navbar-brand
+        >
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <b-nav-item
+              href="#"
+              v-for="item in tabs"
+              v-bind:key="item.id"
+              v-on:click="select(item.name)"
+              v-bind:class="[{ selectedComp: item.name === selected }]"
+              >{{ item.name }}</b-nav-item
+            >
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+      <div class="row occupy-vertical">
+        <div class="col-sm-3 menu p-0">
+          <img src="../assets/logo.png" class="img-fluid" id="logo" />
+          <p
+            class="menu-item h2"
             v-for="item in tabs"
             v-bind:key="item.id"
             v-on:click="select(item.name)"
+            v-bind:class="[{ selectedComp: item.name === selected }]"
           >
             {{ item.name }}
-          </h2>
+          </p>
         </div>
         <div class="col-sm-9">
           <component class="pt-5" v-bind:is="selectedComponent"></component>
@@ -42,6 +66,7 @@ export default {
     select: function(item) {
       this.selected = item;
     },
+    toggleView: function() {},
   },
   computed: {
     selectedComponent: function() {
@@ -59,27 +84,31 @@ export default {
 </script>
 
 <style scoped>
-/* .body {
-  background-image: url("../assets/cricket-stadium-vector.jpg");
-} */
 @import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
+
 #logo {
   max-height: 180px;
-  padding-top: 20px;
+  padding: 10px;
 }
 .wrapper {
-  /* background-color: cornflowerblue; */
-  /* background-image: url("../assets/cricket-stadium-vector.jpg");
-  background-repeat: no-repeat;
-  background-size: cover; */
   height: 100vh;
   width: 100vw;
-  padding-top: 5vh;
+  padding: 5vh;
 }
-.row {
+.mainBox {
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+  background-color: aliceblue;
+  height: 90vh;
+  width: 95vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+/* To make div occupy full height */
+.occupy-vertical {
   height: 100%;
 }
-
+/* Side menu */
 .menu {
   background-color: cornflowerblue;
   background-size: cover;
@@ -93,18 +122,36 @@ export default {
   cursor: pointer;
   padding-top: 5px;
 }
+/* Chart Area */
 .contentArea {
   background-color: aliceblue;
 }
-.mainBox {
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
-  background-color: aliceblue;
-  height: 90vh;
-  width: 95vw;
-  overflow-y: scroll;
-  margin: 0 auto;
+
+.selectedComp {
+  background-color: rgba(0, 0, 0, 0.1);
 }
-.tagline {
-  font-weight: bolder;
+
+/* Media Queries */
+@media screen and (max-width: 700px) {
+  .menu {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  div.content {
+    margin-left: 0;
+  }
+  #logo {
+    max-width: 60px;
+  }
+  .menu {
+    display: none;
+  }
+}
+@media screen and (min-width: 700px) {
+  .mobile-nav {
+    display: none;
+  }
 }
 </style>

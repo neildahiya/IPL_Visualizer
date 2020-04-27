@@ -36,7 +36,7 @@ export default {
           title: "Almost Everyday!",
           subtitle:
             "You wouldn't need to wait to watch your team beat the one you hate.",
-          description: "70+ matches each season",
+          description: "60+ matches each season",
           data: {
             labels: [
               "2008",
@@ -115,8 +115,9 @@ export default {
                 backgroundColor: [
                   "#006BFF",
                   "#8F00FF",
-                  "#FFF900",
-                  "#7E8180",
+                  "#FFCB00",
+                  "#AEDBFF",
+                  "#00FFA7",
                   "#FF0067",
                   "#C73862",
                 ],
