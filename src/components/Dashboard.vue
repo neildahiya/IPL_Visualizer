@@ -7,9 +7,9 @@
         type="dark"
         variant="primary"
       >
-        <b-navbar-brand href="/"
-          ><img id="logo" src="../assets/logo.png" />IPL</b-navbar-brand
-        >
+        <b-navbar-brand href="/">
+          <img id="logo" src="../assets/logo.png" />IPL
+        </b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
@@ -26,7 +26,12 @@
       </b-navbar>
       <div class="row occupy-vertical">
         <div class="col-sm-3 menu p-0">
-          <img src="../assets/logo.png" class="img-fluid" id="logo" />
+          <img
+            src="../assets/logo.png"
+            alt="logo"
+            class="img-fluid"
+            id="logo"
+          />
 
           <p
             class="menu-item h2"
@@ -149,6 +154,9 @@ export default {
   }
   .menu {
     display: none;
+  }
+  .wrapper {
+    padding: 0vh;
   }
 }
 @media screen and (min-width: 700px) {
