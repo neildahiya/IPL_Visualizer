@@ -1,8 +1,9 @@
 
 ## Live at [IPL Visualizer](https://neildahiya.github.io/IPL_VISUALIZER)
+#### Data analysis [Repo](https://github.com/neildahiya/ipl_analysed_data)
 
-![Imgur](https://i.imgur.com/4LiOZdh.png)
-![Imgur](https://i.imgur.com/JijoSIi.png)
+![Imgur](https://i.imgur.com/TrLYlZZ.png)
+
 # Libraries/Frameworks Used
 - vue-ui
 - vue-router
@@ -27,7 +28,8 @@
 ### Offline Functionality :heavy_exclamation_mark:
 - Couldn't do this as converting to PWA didn't work (still trying to debug).
 
-
+## Lighthouse Audit
+![Imgur](https://i.imgur.com/RJXziLc.jpg)
 
 
 
