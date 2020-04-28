@@ -6,13 +6,13 @@ import App from "./App.vue";
 import "bootstrap/dist/css/bootstrap.css";
 import BootstrapVue from "bootstrap-vue/dist/bootstrap-vue.esm";
 import "bootstrap-vue/dist/bootstrap-vue.css";
-import './registerServiceWorker'
-import router from './router'
+
+import router from "./router";
 
 Vue.use(BootstrapVue);
 Vue.config.productionTip = false;
 
 new Vue({
   router,
-  render: (h) => h(App)
+  render: (h) => h(App),
 }).$mount("#app");
