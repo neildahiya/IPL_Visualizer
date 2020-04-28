@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <HelloWorld msg="Welcome to Yohjhhuaskjdfkr Vue.js App" /> -->
     <Dashboard />
   </div>
 </template>
