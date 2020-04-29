@@ -1,12 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="container-fluid p-0 mainBox">
-      <b-navbar
-        class="mobile-nav"
-        toggleable="lg"
-        type="dark"
-        variant="primary"
-      >
+      <b-navbar class="mobile-nav" toggleable="lg" type="dark" variant="primary">
         <b-navbar-brand href="/">
           <img id="logo" src="../assets/logo.png" />IPL
         </b-navbar-brand>
@@ -19,19 +14,13 @@
               v-bind:key="item.id"
               v-on:click="select(item.name)"
               v-bind:class="[{ selectedComp: item.name === selected }]"
-              >{{ item.name }}</b-nav-item
-            >
+            >{{ item.name }}</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
       <div class="row occupy-vertical">
-        <div class="col-sm-3 menu p-0">
-          <img
-            src="../assets/logo.png"
-            alt="logo"
-            class="img-fluid"
-            id="logo"
-          />
+        <div class="col-sm-3 menu">
+          <img src="../assets/logo.png" alt="logo" class="img-fluid" id="logo" />
 
           <p
             class="menu-item h2"
@@ -39,9 +28,7 @@
             v-bind:key="item.id"
             v-on:click="select(item.name)"
             v-bind:class="[{ selectedComp: item.name === selected }]"
-          >
-            {{ item.name }}
-          </p>
+          >{{ item.name }}</p>
         </div>
         <div class="col-sm-9">
           <component class="pt-5" v-bind:is="selectedComponent"></component>
@@ -64,28 +51,28 @@ export default {
         { id: 1, name: "Recap" },
         { id: 2, name: "Hotshots" },
         { id: 3, name: "Action" },
-        { id: 4, name: "Extras" },
-      ],
+        { id: 4, name: "Extras" }
+      ]
     };
   },
   methods: {
     select: function(item) {
       this.selected = item;
     },
-    toggleView: function() {},
+    toggleView: function() {}
   },
   computed: {
     selectedComponent: function() {
       return this.selected.toLowerCase().replace(" ", "");
-    },
+    }
   },
   components: {
     Seasons,
     Recap: () => import("./Tabs/Recap.vue"),
     Hotshots: () => import("./Tabs/Hotshots.vue"),
     Action: () => import("./Tabs/Action.vue"),
-    Extras: () => import("./Tabs/Extras.vue"),
-  },
+    Extras: () => import("./Tabs/Extras.vue")
+  }
 };
 </script>
 
@@ -99,13 +86,12 @@ export default {
 .wrapper {
   height: 100vh;
   width: 100vw;
-  padding: 5vh;
 }
 .mainBox {
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
   background-color: aliceblue;
-  height: 90vh;
-  width: 95vw;
+  height: 100vh;
+  width: 100vw;
   overflow-y: scroll;
   overflow-x: hidden;
   margin: 0 auto;
