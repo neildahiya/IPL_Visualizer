@@ -1,4 +1,4 @@
-## Live at [IPL Visualizer](https://neildahiya.github.io/IPL_VISUALIZER)
+## Live at [IPL Visualizer](https://neildahiya.github.io/IPL_Visualizer)
 
 #### Data analysis [Repo](https://github.com/neildahiya/ipl_analysed_data)
 
